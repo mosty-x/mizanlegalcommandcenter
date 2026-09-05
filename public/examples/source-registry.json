@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "name": "مصدر رسمي — اكتب الاسم",
+      "url": "https://example.gov.eg/official-source",
+      "authority": 5,
+      "jurisdiction": "مصر"
+    }
+  ]
+}

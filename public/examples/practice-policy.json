@@ -1,0 +1,7 @@
+{
+  "requireHumanApproval": true,
+  "allowExternalActions": false,
+  "retentionDays": 365,
+  "permittedJurisdictions": ["مصر"],
+  "prohibitedDataCategories": ["كلمات المرور", "بيانات الدفع الكاملة"]
+}
