@@ -1,0 +1,6 @@
+{
+  "enabledTools": ["enforceability", "disputes", "deal-room", "regulatory", "client-command"],
+  "maxDocumentsPerRun": 8,
+  "maxFindings": 30,
+  "requireVerifiedSources": true
+}

@@ -1,0 +1,7 @@
+{
+  "firmName": "اسم مكتب المحاماة",
+  "shortName": "المكتب",
+  "locale": "ar-EG",
+  "branches": ["القاهرة"],
+  "contactEmail": "operations@example.com"
+}

@@ -1,0 +1,18 @@
+{
+  "toolSlug": "enforceability",
+  "label": "النفاذ القانوني",
+  "extractionInstructions": "",
+  "analysisInstructions": "",
+  "verificationInstructions": "",
+  "searchFocus": "",
+  "sourceIds": [
+    "eg-cassation",
+    "eg-gafi",
+    "eg-fra",
+    "eg-crcica"
+  ],
+  "requiredUnitIds": [],
+  "maxContextChars": 180000,
+  "reviewedBy": "اكتب اسم المراجع",
+  "changeNote": "اكتب سبب تخصيص الأداة"
+}

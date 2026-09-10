@@ -1,0 +1,17 @@
+{
+  "toolSlug": "deal-room",
+  "label": "غرفة الصفقة",
+  "extractionInstructions": "",
+  "analysisInstructions": "",
+  "verificationInstructions": "",
+  "searchFocus": "",
+  "sourceIds": [
+    "eg-cassation",
+    "eg-gafi",
+    "eg-fra"
+  ],
+  "requiredUnitIds": [],
+  "maxContextChars": 180000,
+  "reviewedBy": "اكتب اسم المراجع",
+  "changeNote": "اكتب سبب تخصيص الأداة"
+}

@@ -1,0 +1,45 @@
+{
+  "handler": "/opt/mizan/ssh-server/egypt-rag-handler.ts",
+  "ragProviders": {
+    "generation": {
+      "config": {
+        "id": "remote-generation",
+        "label": "generation",
+        "provider": "openai-compatible",
+        "model": "REPLACE_WITH_GENERATION_MODEL",
+        "baseUrl": "https://api.openai.com/v1/chat/completions"
+      },
+      "apiKey": "REPLACE_WITH_REAL_KEY_ON_SERVER_ONLY"
+    },
+    "embedding": {
+      "config": {
+        "id": "remote-embedding",
+        "label": "embedding",
+        "provider": "openai-compatible",
+        "model": "REPLACE_WITH_EMBEDDING_MODEL",
+        "baseUrl": "https://api.openai.com/v1/embeddings"
+      },
+      "apiKey": "REPLACE_WITH_REAL_KEY_ON_SERVER_ONLY"
+    },
+    "rerank": {
+      "config": {
+        "id": "remote-rerank",
+        "label": "rerank",
+        "provider": "openai-compatible",
+        "model": "REPLACE_WITH_RERANK_MODEL",
+        "baseUrl": "https://api.cohere.com/v2/rerank"
+      },
+      "apiKey": "REPLACE_WITH_REAL_KEY_ON_SERVER_ONLY"
+    },
+    "verifier": {
+      "config": {
+        "id": "remote-verifier",
+        "label": "verifier",
+        "provider": "openai-compatible",
+        "model": "REPLACE_WITH_VERIFIER_MODEL",
+        "baseUrl": "https://api.openai.com/v1/chat/completions"
+      },
+      "apiKey": "REPLACE_WITH_REAL_KEY_ON_SERVER_ONLY"
+    }
+  }
+}

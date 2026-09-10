@@ -1,0 +1,1 @@
+PASS hand-computed binary relevance example: recall@2=0.5, precision@2=0.5, nDCG@2=0.6131471927654584. PASS refusal of empty cases. Synthetic arithmetic check only.

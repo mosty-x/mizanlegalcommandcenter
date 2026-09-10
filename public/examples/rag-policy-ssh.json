@@ -1,0 +1,18 @@
+{
+  "sourceIds": [
+    "eg-cassation",
+    "eg-gafi",
+    "eg-fra",
+    "eg-crcica"
+  ],
+  "sourcesUsedByOffice": false,
+  "embeddingProviderId": "remote-embedding",
+  "rerankProviderId": "remote-rerank",
+  "verifierProviderId": "remote-verifier",
+  "topK": 8,
+  "candidateK": 30,
+  "minRerankScore": 0.5,
+  "maxSourceAgeDays": 90,
+  "maxItems": 8,
+  "kvBackend": "provider-managed"
+}

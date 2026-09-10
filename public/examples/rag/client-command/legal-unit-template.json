@@ -1,0 +1,36 @@
+{
+  "units": [
+    {
+      "id": "REPLACE_WITH_UNIQUE_VERSION_ID",
+      "sourceId": "eg-cassation",
+      "sourceUrl": "https://cc.gov.eg/",
+      "title": "اكتب اسم التشريع أو الحكم هنا",
+      "instrumentId": "اكتب رقم التشريع وسنته أو رقم الطعن",
+      "unitLabel": "اكتب رقم المادة أو الفقرة",
+      "kind": "legislation",
+      "jurisdiction": "EG",
+      "framework": "EG",
+      "topics": [
+        "client-service",
+        "contracts",
+        "civil",
+        "arbitration",
+        "corporate",
+        "investment",
+        "regulatory",
+        "financial"
+      ],
+      "tools": [
+        "client-command"
+      ],
+      "text": "استبدل هذه الجملة بالنص الأصلي الذي راجعته. هذه جملة تعليمات وليست نصًا قانونيًا.",
+      "publishedOn": "YYYY-MM-DD",
+      "validFrom": "YYYY-MM-DD",
+      "validTo": null,
+      "verifiedOn": "YYYY-MM-DD",
+      "reviewer": "اكتب اسم المراجع",
+      "rightsConfirmed": false,
+      "approved": false
+    }
+  ]
+}

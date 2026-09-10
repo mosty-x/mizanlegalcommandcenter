@@ -1,0 +1,47 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> mizan-legal-command-railway@2.1.0 build
+> next build
+
+▲ Next.js 16.3.4 (Turbopack)
+✓ Running next.config.ts took 19ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 736ms
+  Running TypeScript ...
+  Finished TypeScript in 2.5s ...
+  Collecting page data using 8 workers ...
+  Generating static pages using 8 workers (0/20) ...
+  Generating static pages using 8 workers (5/20) 
+  Generating static pages using 8 workers (10/20) 
+  Generating static pages using 8 workers (15/20) 
+✓ Generating static pages using 8 workers (20/20) in 405ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/configuration
+├ ƒ /api/documents
+├ ƒ /api/health
+├ ƒ /api/knowledge
+├ ƒ /api/onboarding
+├ ƒ /api/providers
+├ ƒ /api/providers/test
+├ ƒ /api/runs
+├ ƒ /api/specialization
+├ ƒ /api/workflows/run
+├ ○ /knowledge
+├ ○ /settings
+├ ○ /specialize
+└   /tools/[slug]
+  ├ ● /tools/enforceability
+  ├ ● /tools/disputes
+  ├ ● /tools/deal-room
+  └ ● [+2 more paths]
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

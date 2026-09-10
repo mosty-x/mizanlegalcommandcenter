@@ -1,0 +1,5 @@
+{
+  "status": "not_run",
+  "reason": "Chromium executable was unavailable. The browser download did not complete in the current environment. No visual or browser-interaction pass is claimed.",
+  "completedAlternative": "Production HTTP smoke test with real server and SSH transport; Next.js build and TypeScript checks."
+}

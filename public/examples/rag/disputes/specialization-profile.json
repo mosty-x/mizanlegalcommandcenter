@@ -1,0 +1,16 @@
+{
+  "toolSlug": "disputes",
+  "label": "النزاعات والتحكيم",
+  "extractionInstructions": "",
+  "analysisInstructions": "",
+  "verificationInstructions": "",
+  "searchFocus": "",
+  "sourceIds": [
+    "eg-cassation",
+    "eg-crcica"
+  ],
+  "requiredUnitIds": [],
+  "maxContextChars": 180000,
+  "reviewedBy": "اكتب اسم المراجع",
+  "changeNote": "اكتب سبب تخصيص الأداة"
+}

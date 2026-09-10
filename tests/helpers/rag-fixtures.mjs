@@ -1,0 +1,11 @@
+// Artificial text for software tests only. These are NOT Egyptian legal propositions.
+export const TODAY=new Date().toISOString().slice(0,10);
+export const TOOLS=['enforceability','disputes','deal-room','regulatory','client-command'];
+export const UNIT={id:'fixture-law',sourceId:'eg-cassation',sourceUrl:'https://cc.gov.eg/',title:'نص اصطناعي للاختبار البرمجي فقط',instrumentId:'TEST-ONLY-NOT-LAW',unitLabel:'فقرة اختبار',kind:'legislation',jurisdiction:'EG',framework:'EG',topics:['contracts','civil','arbitration','litigation','corporate','investment','financial','regulatory','client-service'],tools:TOOLS,text:'هذا نص اصطناعي لا يمثل قانونًا مصريًا. يستخدم فقط لقياس ترابط الأدلة البرمجي.',publishedOn:'2020-01-01',validFrom:'2020-01-01',validTo:null,verifiedOn:TODAY,reviewer:'اختبار آلي غير قانوني',rightsConfirmed:true,approved:true};
+export const MATTER={id:'DOC-fixture-P1-C1',documentId:'fixture',kind:'matter',fileName:'synthetic.txt',page:1,text:'هذه واقعة اصطناعية للاختبار البرمجي فقط بتاريخ 2025-01-01 ولا تصف ملف عميل حقيقي.'};
+export const LAW={id:'LAW-fixture-law',kind:'law',fileName:UNIT.title,text:UNIT.text,legal:UNIT};
+export const POLICY={sourceIds:['eg-cassation'],sourcesUsedByOffice:true,embeddingProviderId:'embedding',rerankProviderId:'rerank',verifierProviderId:'verifier',topK:8,candidateK:30,minRerankScore:0.5,maxSourceAgeDays:90,maxItems:8,kvBackend:'provider-managed'};
+export const METRICS={corpusUnits:1,candidateCount:1,selectedCount:1,embeddingHits:0,embeddingMisses:0,retrievalCacheHit:false,rerankModel:'fixture-rerank'};
+export function claim(kind='clause',patch={}){return {id:'C1',title:'عنصر اصطناعي',kind,basis:'legal',statement:'نص اختبار مرتبط بالأدلة المحددة.',proposal:'',severity:'معلومة',factCitations:[{sourceId:MATTER.id,quote:MATTER.text}],lawCitations:[{sourceId:LAW.id,quote:LAW.text}],date:null,owner:null,status:'observed',dependsOn:[],...patch};}
+export const credential=(id,path='chat/completions')=>({config:{id,label:id,provider:'openai-compatible',model:`fixture-${id}`,baseUrl:`https://api.openai.com/v1/${path}`},apiKey:'synthetic-test-key-only'});
+export const PROVIDERS={generation:credential('generation'),embedding:credential('embedding','embeddings'),rerank:credential('rerank','rerank'),verifier:credential('verifier')};

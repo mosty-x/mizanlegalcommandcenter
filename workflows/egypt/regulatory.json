@@ -1,0 +1,90 @@
+{
+  "version": "egypt-rag-2.1.0",
+  "slug": "regulatory",
+  "title": "المسار التنظيمي",
+  "jurisdiction": "EG",
+  "topics": [
+    "regulatory",
+    "investment",
+    "corporate",
+    "financial"
+  ],
+  "sourceIds": [
+    "eg-cassation",
+    "eg-gafi",
+    "eg-fra"
+  ],
+  "allowedKinds": [
+    "authority",
+    "procedure",
+    "requirement"
+  ],
+  "analysisInstruction": "حدّد الجهة والإجراءات والمتطلبات والتبعيات من النصوص المسترجعة وحدها. كل procedure أو requirement يحتاج سندًا قانونيًا. dependsOn يتضمن معرفات خطوات سابقة موجودة فقط. لا تختلق رسمًا أو مهلة أو نموذجًا ولا تنشئ اعتمادًا دائريًا.",
+  "product": "procedure-graph",
+  "maxConcurrency": 2,
+  "nodes": [
+    {
+      "id": "activity",
+      "label": "تحديد النشاط والكيان",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج النشاط والكيان والموقع والتراخيص كما وردت؛ اترك البيانات الناقصة غير محسومة."
+    },
+    {
+      "id": "submitted",
+      "label": "جرد المتطلبات المقدمة",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج المستندات والتصاريح المتاحة دون افتراض أنها صالحة أو حديثة."
+    },
+    {
+      "id": "retrieve",
+      "label": "بحث لفظي ودلالي داخل الذاكرة",
+      "handler": "retrieve",
+      "dependsOn": []
+    },
+    {
+      "id": "rerank",
+      "label": "إعادة ترتيب السند القانوني",
+      "handler": "rerank",
+      "dependsOn": [
+        "retrieve"
+      ]
+    },
+    {
+      "id": "analyze",
+      "label": "مطابقة الوقائع بالقانون",
+      "handler": "analyze",
+      "dependsOn": [
+        "activity",
+        "submitted",
+        "rerank"
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "فحص الاقتباسات ونوع السند",
+      "handler": "gate",
+      "dependsOn": [
+        "analyze",
+        "rerank"
+      ]
+    },
+    {
+      "id": "verify",
+      "label": "مراجعة استدلال مستقلة",
+      "handler": "verify",
+      "dependsOn": [
+        "gate"
+      ]
+    },
+    {
+      "id": "procedure-graph",
+      "label": "تجميع الناتج المتخصص",
+      "handler": "product",
+      "dependsOn": [
+        "verify"
+      ]
+    }
+  ]
+}

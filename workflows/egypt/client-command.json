@@ -1,0 +1,96 @@
+{
+  "version": "egypt-rag-2.1.0",
+  "slug": "client-command",
+  "title": "قيادة ملف العميل",
+  "jurisdiction": "EG",
+  "topics": [
+    "client-service",
+    "contracts",
+    "civil",
+    "arbitration",
+    "corporate",
+    "investment",
+    "regulatory",
+    "financial"
+  ],
+  "sourceIds": [
+    "eg-cassation",
+    "eg-gafi",
+    "eg-fra",
+    "eg-crcica"
+  ],
+  "allowedKinds": [
+    "progress",
+    "client-request",
+    "deadline",
+    "decision"
+  ],
+  "analysisInstruction": "اكتب موجزًا للعميل من المستندات المحددة فقط. لا تجمع ملفات أخرى. فرّق بين الحالة المرصودة والاقتراح. كل نصيحة قانونية تحتاج سندًا من الذاكرة. لا تحسب موعدًا غير موجود صراحة.",
+  "product": "client-brief",
+  "maxConcurrency": 2,
+  "nodes": [
+    {
+      "id": "status",
+      "label": "استخراج حالة الملف",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج المنجز والجاري والمتعطل من المستندات التي أقر المستخدم بصلاحية مشاركتها مع العميل."
+    },
+    {
+      "id": "requests",
+      "label": "استخراج المطلوب والمواعيد",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج المطلوب والقرارات المنتظرة والمواعيد الصريحة. لا تنقل ملاحظات داخلية أو تخترع تحديثًا."
+    },
+    {
+      "id": "retrieve",
+      "label": "بحث لفظي ودلالي داخل الذاكرة",
+      "handler": "retrieve",
+      "dependsOn": []
+    },
+    {
+      "id": "rerank",
+      "label": "إعادة ترتيب السند القانوني",
+      "handler": "rerank",
+      "dependsOn": [
+        "retrieve"
+      ]
+    },
+    {
+      "id": "analyze",
+      "label": "مطابقة الوقائع بالقانون",
+      "handler": "analyze",
+      "dependsOn": [
+        "status",
+        "requests",
+        "rerank"
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "فحص الاقتباسات ونوع السند",
+      "handler": "gate",
+      "dependsOn": [
+        "analyze",
+        "rerank"
+      ]
+    },
+    {
+      "id": "verify",
+      "label": "مراجعة استدلال مستقلة",
+      "handler": "verify",
+      "dependsOn": [
+        "gate"
+      ]
+    },
+    {
+      "id": "client-brief",
+      "label": "تجميع الناتج المتخصص",
+      "handler": "product",
+      "dependsOn": [
+        "verify"
+      ]
+    }
+  ]
+}

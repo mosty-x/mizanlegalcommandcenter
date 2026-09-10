@@ -1,0 +1,89 @@
+{
+  "version": "egypt-rag-2.1.0",
+  "slug": "disputes",
+  "title": "النزاعات والتحكيم",
+  "jurisdiction": "EG",
+  "topics": [
+    "civil",
+    "arbitration",
+    "litigation"
+  ],
+  "sourceIds": [
+    "eg-cassation",
+    "eg-crcica"
+  ],
+  "allowedKinds": [
+    "event",
+    "claim",
+    "contradiction",
+    "evidence-gap"
+  ],
+  "analysisInstruction": "ابنِ أحداثًا وادعاءات وتعارضات وثغرات إثبات. لكل تعارض اقتباسان يدعمان وجوده. طبّق قواعد التحكيم المؤسسية فقط لو حُددت للمهمة. لا تحسب ميعاد طعن أو تقادم بلا نص وتاريخ بدء محسومين.",
+  "product": "chronology-matrix",
+  "maxConcurrency": 2,
+  "nodes": [
+    {
+      "id": "events",
+      "label": "استخراج الوقائع المؤرخة",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج الأحداث والتواريخ الصريحة. التاريخ غير الموجود أو المبهم يكون null. لا تحسب مواعيد إجرائية."
+    },
+    {
+      "id": "claims",
+      "label": "استخراج الادعاءات والأدلة",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج ادعاءات كل طرف وأدلتها والنصوص المتعارضة. الادعاء المنسوب لصاحبه لا يصبح واقعة ثابتة."
+    },
+    {
+      "id": "retrieve",
+      "label": "بحث لفظي ودلالي داخل الذاكرة",
+      "handler": "retrieve",
+      "dependsOn": []
+    },
+    {
+      "id": "rerank",
+      "label": "إعادة ترتيب السند القانوني",
+      "handler": "rerank",
+      "dependsOn": [
+        "retrieve"
+      ]
+    },
+    {
+      "id": "analyze",
+      "label": "مطابقة الوقائع بالقانون",
+      "handler": "analyze",
+      "dependsOn": [
+        "events",
+        "claims",
+        "rerank"
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "فحص الاقتباسات ونوع السند",
+      "handler": "gate",
+      "dependsOn": [
+        "analyze",
+        "rerank"
+      ]
+    },
+    {
+      "id": "verify",
+      "label": "مراجعة استدلال مستقلة",
+      "handler": "verify",
+      "dependsOn": [
+        "gate"
+      ]
+    },
+    {
+      "id": "chronology-matrix",
+      "label": "تجميع الناتج المتخصص",
+      "handler": "product",
+      "dependsOn": [
+        "verify"
+      ]
+    }
+  ]
+}

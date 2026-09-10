@@ -1,0 +1,1 @@
+{"id":"memory","version":"1.0.0","nodes":[{"id":"memory-permissions","label":"هوية المصدر واختصاص الأداة","dependsOn":[]},{"id":"memory-validity","label":"السريان والقواعد وتعارض النسخ","dependsOn":["memory-permissions"]},{"id":"memory-snapshot","label":"تثبيت نسخة الذاكرة المسموحة","dependsOn":["memory-validity"]}]}

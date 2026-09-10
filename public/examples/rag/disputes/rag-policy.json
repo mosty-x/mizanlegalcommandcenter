@@ -1,0 +1,16 @@
+{
+  "sourceIds": [
+    "eg-cassation",
+    "eg-crcica"
+  ],
+  "sourcesUsedByOffice": false,
+  "embeddingProviderId": "SET_EMBEDDING_PROVIDER_ID",
+  "rerankProviderId": "SET_RERANK_PROVIDER_ID",
+  "verifierProviderId": "SET_VERIFIER_PROVIDER_ID",
+  "topK": 8,
+  "candidateK": 30,
+  "minRerankScore": 0.5,
+  "maxSourceAgeDays": 90,
+  "maxItems": 8,
+  "kvBackend": "provider-managed"
+}

@@ -1,0 +1,1 @@
+{"id":"context","version":"1.0.0","nodes":[{"id":"context-evidence","label":"فصل أدلة الملف عن السند القانوني","dependsOn":[]},{"id":"context-chronology","label":"ترتيب الوقائع المؤرخة وسياق التطبيق","dependsOn":["context-evidence"]},{"id":"context-budget","label":"ميزانية السياق وكشف النقص دون قص صامت","dependsOn":["context-chronology"]}]}

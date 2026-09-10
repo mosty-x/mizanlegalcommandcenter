@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> mizan-legal-command-railway@2.1.0 smoke
+> node --conditions=react-server --import tsx scripts/smoke-production.mjs
+
+PASS production HTTP: onboarding; vault; policy; reviewed corpus import; empty-memory abstention; all 5 API DAGs; all 5 complete DAGs over pinned SSH; warm cache; user/tool isolation; sharing gate; persistent outputs; approval; source withdrawal; specialization revisions; prompt forwarding to remote engine; atomic memory correction. Neural services were deterministic doubles, not live legal evaluation.

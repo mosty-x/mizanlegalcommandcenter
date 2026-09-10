@@ -1,0 +1,90 @@
+{
+  "version": "egypt-rag-2.1.0",
+  "slug": "enforceability",
+  "title": "النفاذ القانوني",
+  "jurisdiction": "EG",
+  "topics": [
+    "contracts",
+    "civil",
+    "arbitration"
+  ],
+  "sourceIds": [
+    "eg-cassation",
+    "eg-gafi",
+    "eg-fra",
+    "eg-crcica"
+  ],
+  "allowedKinds": [
+    "clause",
+    "risk",
+    "amendment"
+  ],
+  "analysisInstruction": "قيّم البنود وفق النصوص المصرية المسترجعة. اربط كل مخاطرة بنص العقد والنص القانوني. اقترح الصياغة باعتبارها اقتراحًا يحتاج محاميًا لا نصًا قانونيًا. لا تجزم بالبطلان أو النفاذ بمجرد التشابه.",
+  "product": "clause-review",
+  "maxConcurrency": 2,
+  "nodes": [
+    {
+      "id": "clauses",
+      "label": "استخراج البنود",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج نصوص البنود محل المراجعة ومحلها في العقد دون حكم قانوني."
+    },
+    {
+      "id": "terms",
+      "label": "استخراج القانون والاختصاص",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج الاختصاص والقانون المختار وشرط التحكيم والإنهاء كما وردت فقط."
+    },
+    {
+      "id": "retrieve",
+      "label": "بحث لفظي ودلالي داخل الذاكرة",
+      "handler": "retrieve",
+      "dependsOn": []
+    },
+    {
+      "id": "rerank",
+      "label": "إعادة ترتيب السند القانوني",
+      "handler": "rerank",
+      "dependsOn": [
+        "retrieve"
+      ]
+    },
+    {
+      "id": "analyze",
+      "label": "مطابقة الوقائع بالقانون",
+      "handler": "analyze",
+      "dependsOn": [
+        "clauses",
+        "terms",
+        "rerank"
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "فحص الاقتباسات ونوع السند",
+      "handler": "gate",
+      "dependsOn": [
+        "analyze",
+        "rerank"
+      ]
+    },
+    {
+      "id": "verify",
+      "label": "مراجعة استدلال مستقلة",
+      "handler": "verify",
+      "dependsOn": [
+        "gate"
+      ]
+    },
+    {
+      "id": "clause-review",
+      "label": "تجميع الناتج المتخصص",
+      "handler": "product",
+      "dependsOn": [
+        "verify"
+      ]
+    }
+  ]
+}

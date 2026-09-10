@@ -1,0 +1,91 @@
+{
+  "version": "egypt-rag-2.1.0",
+  "slug": "deal-room",
+  "title": "غرفة الصفقة",
+  "jurisdiction": "EG",
+  "topics": [
+    "corporate",
+    "investment",
+    "contracts",
+    "financial"
+  ],
+  "sourceIds": [
+    "eg-cassation",
+    "eg-gafi",
+    "eg-fra"
+  ],
+  "allowedKinds": [
+    "document-check",
+    "red-flag",
+    "condition-precedent",
+    "obligation"
+  ],
+  "analysisInstruction": "أنشئ سجل فحص ومخاطر وشروط سابقة للإغلاق والتزامات. فرّق بين شرط تعاقدي ومطلب قانوني. لا تعتبر موافقة جهة مطلوبة بلا نص مناسب للنشاط. status يصف مصدرًا أو اقتراحًا لا متابعة فعلية.",
+  "product": "deal-register",
+  "maxConcurrency": 2,
+  "nodes": [
+    {
+      "id": "inventory",
+      "label": "تصنيف مستندات الصفقة",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج نوع المستند والأطراف والنطاق المصرح به؛ لا تستنتج اكتمال الملف من غياب مستند."
+    },
+    {
+      "id": "commitments",
+      "label": "استخراج الشروط والالتزامات",
+      "handler": "extract",
+      "dependsOn": [],
+      "instruction": "استخرج شروط الإغلاق والالتزامات والموافقات والمواعيد المذكورة صراحة."
+    },
+    {
+      "id": "retrieve",
+      "label": "بحث لفظي ودلالي داخل الذاكرة",
+      "handler": "retrieve",
+      "dependsOn": []
+    },
+    {
+      "id": "rerank",
+      "label": "إعادة ترتيب السند القانوني",
+      "handler": "rerank",
+      "dependsOn": [
+        "retrieve"
+      ]
+    },
+    {
+      "id": "analyze",
+      "label": "مطابقة الوقائع بالقانون",
+      "handler": "analyze",
+      "dependsOn": [
+        "inventory",
+        "commitments",
+        "rerank"
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "فحص الاقتباسات ونوع السند",
+      "handler": "gate",
+      "dependsOn": [
+        "analyze",
+        "rerank"
+      ]
+    },
+    {
+      "id": "verify",
+      "label": "مراجعة استدلال مستقلة",
+      "handler": "verify",
+      "dependsOn": [
+        "gate"
+      ]
+    },
+    {
+      "id": "deal-register",
+      "label": "تجميع الناتج المتخصص",
+      "handler": "product",
+      "dependsOn": [
+        "verify"
+      ]
+    }
+  ]
+}

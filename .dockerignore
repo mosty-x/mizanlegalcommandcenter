@@ -1,0 +1,15 @@
+.git
+.next
+node_modules
+.mizan-data
+*.log
+.env*
+!.env.example
+tests
+
+# Remote receiver secrets are deployed outside the repository
+**/receiver.json
+**/receiver.env
+*.key
+id_rsa
+id_ed25519

@@ -1,0 +1,70 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> mizan-legal-command-railway@2.1.0 test
+> node --conditions=react-server --import tsx --test tests/*.test.mjs
+
+✔ enforceability: runtime DAG executes typed product and all real nodes (7.96635ms)
+✔ disputes: runtime DAG executes typed product and all real nodes (2.299124ms)
+✔ deal-room: runtime DAG executes typed product and all real nodes (1.580803ms)
+✔ regulatory: runtime DAG executes typed product and all real nodes (1.654593ms)
+✔ client-command: runtime DAG executes typed product and all real nodes (1.36837ms)
+✔ empty narrow memory abstains without ANY neural call (0.606335ms)
+✔ low relevance cannot trigger ungrounded analysis (1.009971ms)
+✔ reranker cannot inject a new source (0.701135ms)
+✔ correct reference ID with unsupported conclusion is withheld by separate review (0.888812ms)
+✔ missing or duplicated verification verdict is not approval (2.235379ms)
+✔ model/service failures propagate and record failed node; no fallback report (5.645264ms)
+✔ fabricated quotation, wrong matter and law-from-contract all fail deterministic gate (0.262608ms)
+✔ dates and owner assertions are not generated as unconditional scheduled actions (1.054777ms)
+✔ malicious source text does not authorize external IDs in final output (0.140517ms)
+✔ dependency cycle and dependent-of-withheld are removed transitively (0.181328ms)
+✔ DAG cannot bypass gate/verifier or introduce cycle/unknown dependency (1.528106ms)
+✔ source host lookalikes, non-Egypt scope, stale reviews and wrong tool are excluded (0.314704ms)
+✔ law validity intervals are half-open, and conflicting overlapping versions block (0.385189ms)
+✔ CRCICA rules cannot apply without selected institutional framework (0.116382ms)
+✔ Arabic lexical and dense ranks both influence hybrid retrieval (1.384444ms)
+✔ specialization versions are encrypted, isolated and protected against lost updates; rollback is a new version (15.064647ms)
+✔ profile cannot introduce an unknown source, alter the target tool, or enlarge the context cap (1.005324ms)
+✔ profile instructions reach all neural stages and cannot bypass deterministic citation gates (4.825463ms)
+✔ per-tool profile narrowing cannot widen office memory; empty intersection makes zero model calls (0.715606ms)
+✔ memory DAG excludes stale and wrong-tool units before context and records the snapshot (0.523804ms)
+✔ context DAG sorts explicitly dated evidence and refuses excess without silent truncation (7.559019ms)
+✔ lawyer correction replaces a unit atomically and rejects stale editor snapshots (6.630037ms)
+✔ required authorities cannot be omitted by ranking, and withdrawal stops the workflow (2.54693ms)
+✔ corpus encryption, tenant isolation, idempotent import and atomic conflict (17.480604ms)
+✔ cache is encrypted, tenant scoped, TTL bounded, and invalidated on withdrawal (3.598272ms)
+✔ source withdrawal while decrypting is detected by the final synchronous revision (6.42226ms)
+✔ embedding + rerank transports execute once, then scoped cache hits; changed matter invalidates (16.226934ms)
+✔ vLLM salt differs by tenant/matter and is absent in provider-managed mode (7.812963ms)
+✔ wrong role endpoint or failed neural service cannot fall back to ungrounded mode (1.507035ms)
+✔ remote Egyptian handler runs the SAME multi-stage engine with server-owned credentials (16.55667ms)
+✔ generation response size is bounded while streaming, without a content-length header (1.996207ms)
+✔ Railway deployment has a Docker build and a guarded health check (8.348073ms)
+✔ first visit uses a signed HttpOnly cookie and versioned consent (1.797834ms)
+✔ the guide contains all five workflows and a workspace launch gate (2.858009ms)
+✔ secrets and blobs remain encrypted and path constrained (3.802954ms)
+✔ provider URLs require HTTPS and an explicit allowlist (5.082082ms)
+✔ legal output preserves sources and human approval (7.712976ms)
+✔ the Railway source no longer imports Cloudflare runtime or Drizzle (106.895189ms)
+✔ interface keeps RTL, premium dropdowns, scrollbars and reduced motion (1.336838ms)
+✔ shipped remote receiver executes the reference handler against a local API fixture (257.201128ms)
+▶ real SSH handshake, fixed command, validation and failure boundaries
+  ✔ health succeeds over SSH and only invokes the fixed receiver (514.174851ms)
+  ✔ SSH input requires fingerprint and does not require an API key (2.006552ms)
+  ✔ unlisted host, invalid port and invalid private key are rejected (2.592768ms)
+  ✔ bad fingerprint is rejected before authentication or job submission (8.750803ms)
+  ✔ wrong-id (491.765297ms)
+  ✔ invalid (499.672692ms)
+  ✔ oversize (460.310972ms)
+  ✔ disconnect (443.802392ms)
+  ✔ timeout (400.984424ms)
+  ✔ connection slot is released after failure (490.057048ms)
+✔ real SSH handshake, fixed command, validation and failure boundaries (3397.459246ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 56
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3699.763459
